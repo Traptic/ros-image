@@ -1,7 +1,10 @@
 language: python
 python: 2.7
+os: linux
+dist: xenial
 
 version: ~> 1.0
+sudo: required
 
 services:
 - docker
