@@ -12,7 +12,7 @@ env:
     - secure: seZdS0NO9RAk4g2w597+rkT+rREYfVbwcnqRk8Jdm+9LC6bnTPby5pVXFLFWnSNk/ZjtDjVYStxe1yRM9gFkY/wukkLKF88e5lrJP9/u0twnFdnHY1rKYKWIZwmli65pSRo7WfjO/u7Qz5621LhcBvmSXMB2QVDEsdBOcWwaUGsh9As7sZdk93zVaZoXW5Bo0Y4Z4asLxSUKp7tPKHbBWwWDL3jk8q+p4gTu6TStI0y/xsEnpxxvADdvVwtGAtxpwyXvry2shIUvnK6CfRjLRl9jZEnMoXxW5UBi2lA/2HR3YVY3+bvP/e6WwckD1ICMr/ZjMh1X1ELnMtMj7aoOIbjK1hviveXag3Y5Z4QLTKJAih6qSUE9f0VLIYpXpPJQAD8jo/9Q86EXhiBq8zE6xoVTYkPEChkY0Bcla9cep0CldLivmi85r6e5X92QtlLDTlGS5Ehzfw98D4kbFs88uKdh1UQD8QbxMgLn8RmVjUPaJ81XyEB/MVZGCCsal1+AdkOpb/qQ8qRSWs1TbL/7BA/R/CbGv39Azcc8myUu0DBbSQs6xWn91Qf4KRx4M0MCJ6GIKEdj29ZhaidIoeBeLcsEka8UUe0hpsmYSVhjTU3jMQra3cZgxykaP8ZUGsC5rv0i4sWHLGZR4nbapQt9wMRg9NNUFy62tbJ2uwdXcNU=
 
 install:
-  - docker login --user ${DOCKER_USER} --password ${DOCKER_PASSWORD}
+  - docker login --username ${DOCKER_USER} --password ${DOCKER_PASSWORD}
 
 script:
 - make uploadImage
