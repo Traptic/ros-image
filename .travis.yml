@@ -19,7 +19,7 @@ script:
 
 branches:
   only:
-    - master
+    - release*
 
 notifications:
   slack:
