@@ -12,12 +12,8 @@ install:
   - docker login --username ${DOCKER_USER} --password ${DOCKER_PASSWORD}
 
 script:
-- ROS_IMAGE_VERSION=`echo ${TRAVIS_PULL_REQUEST_BRANCH:=${TRAVIS_BRANCH}} | sed 's/\//-/g'` make uploadImage
+- ROS_IMAGE_VERSION=kinetic-ros-base-xenial-`echo ${TRAVIS_PULL_REQUEST_BRANCH:=${TRAVIS_BRANCH}} | sed 's/\//-/g'` make uploadImage
 
 branches:
   only:
     - /release.*/
-
-notifications:
-  slack:
-    secure: ks1aBCYZA1/LJXEQNj17K1ucNMjoH9LtfTEq18hpcpcP4oYKaUykGi6gqdkm7BOriaNPraMRMwkBa6xxJeTl5xbO/ySgOSdA/VlGkRGULhnDr8pl2nU+K8ls8Rx2vlSv7OqvvZG5sXK0VZ5RNIZa/j88wZ0YIxzBu59TvV9aP5A7jEZB1JfDpg9NAdubU5RCEFrdnoeTVu+whJJGtx/lV0+Nvqen8KxgPrwJ2sZXy1XUSOd07tfUdLsSyCUGTJiw4SHEwf4lbsgtLgHdyJR+JfX/v7J6XUab64ZwZEUZLw3L2E4+RZ2/xbDqD2nvRB4s26dv7K8jNsV9t9/gY7dz7t1HeMhfFgH3/LJMWdWPHcspbb//yvcLsOcDIfjRbIFDvxSQav6k7PY0IR+HqH9uztpHEWnncVJZ+tpcWWh3z3Y+yaN7x3IK14BFQ1D65Wl1k5THrG0DQXmh3Z65u4wdIsuxxEAZULvKSUQ8S+l/vbnW522mxV5jVRfTVDswh9SCE2PXGF+qlcMyaK/4/S5HqIyjYfaLJvs+Fi49dicglXJs6AYKfhkm3pLZMYW5VpDP+8qAkhqc0uYLLKTDqXTu46sW93UkFHJ/UYJLLsbpZ4/9kmos2APcxrhMZN/vf6NBopDSByRvYB8oXTHO3grOdTnkF2MSyJ6GI214SdgKaVw=
