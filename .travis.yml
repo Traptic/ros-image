@@ -15,7 +15,7 @@ install:
   - docker login --username ${DOCKER_USER} --password ${DOCKER_PASSWORD}
 
 script:
-- make uploadImage
+- ROS_IMAGE_VERSION=`echo ${TRAVIS_PULL_REQUEST_BRANCH:=${TRAVIS_BRANCH}} | sed 's/\//-/g'` make uploadImage
 
 branches:
   only:
