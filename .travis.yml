@@ -5,10 +5,18 @@ dist: xenial
 
 version: ~> 1.0
 
+# Install docker service dependencies.
 services:
 - docker
 
+# Update docker.
+addons:
+  apt:
+    packages:
+      - docker-ce
+
 install:
+  - docker --version
   - docker login --username ${DOCKER_USER} --password ${DOCKER_PASSWORD}
 
 script:
