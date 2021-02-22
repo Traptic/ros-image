@@ -24,15 +24,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # CUDA
-WORKDIR /tmp/cuda
-RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_10.0.130-1_amd64.deb \
-    && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub \
-    && apt-key add 7fa2af80.pub \
-    && apt install ./cuda-repo-ubuntu1604_10.0.130-1_amd64.deb \
-    && apt-get update && apt-get install -y --no-install-recommends \
-      cuda-10-0 \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /tmp/cuda
+# WORKDIR /tmp/cuda
+# RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_10.0.130-1_amd64.deb \
+#     && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub \
+#     && apt-key add 7fa2af80.pub \
+#     && apt install ./cuda-repo-ubuntu1604_10.0.130-1_amd64.deb \
+#     && apt-get update && apt-get install -y --no-install-recommends \
+#       cuda-10-0 \
+#     && rm -rf /var/lib/apt/lists/* \
+#     && rm -rf /tmp/cuda
 
 # OpenCV
 WORKDIR /tmp/opencv
