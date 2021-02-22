@@ -1,8 +1,9 @@
 
 SHELL:=/bin/bash
 
-BRANCH:=$(shell git branch --show-current)
-ROS_IMAGE_VERSION?=kinetic-ros-base-xenial-${BRANCH}
+BRANCH?=$(shell git rev-parse --abbrev-ref HEAD)
+BRANCH_SANITIZED:=$(shell echo ${BRANCH} | sed 's/\//-/g')
+ROS_IMAGE_VERSION?=kinetic-ros-base-xenial-${BRANCH_SANITIZED}
 ROS_IMAGE_TAG?=traptic/ros:${ROS_IMAGE_VERSION}
 
 image:
