@@ -12,7 +12,7 @@ install:
   - docker login --username ${DOCKER_USER} --password ${DOCKER_PASSWORD}
 
 script:
-- ROS_IMAGE_VERSION=kinetic-ros-base-xenial-`echo ${TRAVIS_PULL_REQUEST_BRANCH:=${TRAVIS_BRANCH}} | sed 's/\//-/g'` make uploadImage
+- BRANCH=${TRAVIS_BRANCH} make uploadImage
 
 branches:
   only:
