@@ -1,0 +1,19 @@
+language: python
+python: 3.8
+os: linux
+dist: focal
+
+version: ~> 1.0
+
+services:
+- docker
+
+install:
+  - docker login --username ${DOCKER_USER} --password ${DOCKER_PASSWORD}
+
+script:
+- BRANCH=${TRAVIS_BRANCH} make uploadImage
+
+branches:
+  only:
+    - /release.*/
