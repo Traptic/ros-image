@@ -76,19 +76,6 @@ RUN apt-mark hold libcublas-dev-11-2 libnccl-dev
 ENV LIBRARY_PATH /usr/local/cuda/lib64/stubs
 
 
-### devel/cudnn8
-ENV CUDNN_VERSION 8.1.1.33
-
-LABEL com.nvidia.cudnn.version="${CUDNN_VERSION}"
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libcudnn8=$CUDNN_VERSION-1+cuda11.2 \
-    libcudnn8-dev=$CUDNN_VERSION-1+cuda11.2 \
-    && apt-mark hold libcudnn8 && \
-    rm -rf /var/lib/apt/lists/*
-
-
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
       libopencv-dev \
       python3-opencv \
